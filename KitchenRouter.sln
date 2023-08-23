@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenRouter.WebAPI", "KitchenRouter.WebAPI\KitchenRouter.WebAPI.csproj", "{AD90325E-97C3-4C54-B495-FA8864B0F1CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenRouter.Domain", "KitchenRouter.Domain\KitchenRouter.Domain.csproj", "{5B70B3B3-18CB-4B6A-B5DC-187281091031}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenRouter.Infrastructure", "KitchenRouter.Infrastructure\KitchenRouter.Infrastructure.csproj", "{DF3A0F88-FC8E-4F1B-8642-CFBE23B36172}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenRouter.Application", "KitchenRouter.Application\KitchenRouter.Application.csproj", "{6908BD1C-0074-410A-B6F1-91AAF78C18FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD90325E-97C3-4C54-B495-FA8864B0F1CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD90325E-97C3-4C54-B495-FA8864B0F1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD90325E-97C3-4C54-B495-FA8864B0F1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD90325E-97C3-4C54-B495-FA8864B0F1CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B70B3B3-18CB-4B6A-B5DC-187281091031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B70B3B3-18CB-4B6A-B5DC-187281091031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B70B3B3-18CB-4B6A-B5DC-187281091031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B70B3B3-18CB-4B6A-B5DC-187281091031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF3A0F88-FC8E-4F1B-8642-CFBE23B36172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF3A0F88-FC8E-4F1B-8642-CFBE23B36172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF3A0F88-FC8E-4F1B-8642-CFBE23B36172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF3A0F88-FC8E-4F1B-8642-CFBE23B36172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6908BD1C-0074-410A-B6F1-91AAF78C18FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6908BD1C-0074-410A-B6F1-91AAF78C18FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6908BD1C-0074-410A-B6F1-91AAF78C18FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6908BD1C-0074-410A-B6F1-91AAF78C18FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40A14D9C-BDC3-48DE-8176-19D225E14418}
+	EndGlobalSection
+EndGlobal
