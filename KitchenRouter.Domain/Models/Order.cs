@@ -1,4 +1,5 @@
 ﻿using KitchenRouter.Domain.Enums;
+using KitchenRouter.Domain.Validations;
 
 namespace KitchenRouter.Domain.Models
 {
@@ -13,6 +14,8 @@ namespace KitchenRouter.Domain.Models
             ItemName = itemName;
             KitchenArea = kitchenArea;
             Quantity = quantity;
+
+            Validate(this, new OrderValidator());
         }
     }
 }

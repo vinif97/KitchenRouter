@@ -2,6 +2,7 @@ using KitchenRouter.Application.DTOs;
 using KitchenRouter.Domain.Models;
 using KitchenRouter.Domain.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace KitchenRouter.WebAPI.Controllers
 {
@@ -16,7 +17,7 @@ namespace KitchenRouter.WebAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] OrderRequest orderRequest) 
+        public async Task<IActionResult> Post([FromBody] OrderRequest orderRequest) 
         {
             Order order = new(orderRequest.ItemName, orderRequest.Quantity, orderRequest.KitchenArea);
             _repository.Create(order);
@@ -24,10 +25,18 @@ namespace KitchenRouter.WebAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
             var orders = _repository.GetAll();
-            return Ok(orders);
+            
+            List<OrderResponse> orderResponses = new();
+
+            foreach (var order in orders)
+            {
+                orderResponses.Add(new OrderResponse(order.ItemName,
+                    order.Quantity, order.KitchenArea));
+            }
+            return Ok(orderResponses);
         }
     }
 }

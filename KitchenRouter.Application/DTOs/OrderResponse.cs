@@ -3,18 +3,18 @@ using System.Text.Json.Serialization;
 
 namespace KitchenRouter.Application.DTOs
 {
-    public record OrderRequest
+    public record OrderResponse
     {
         public string ItemName { get; init; }
         public int Quantity { get; init; }
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public KitchenArea KitchenArea { get; init; }
 
-        public OrderRequest(string itemName, int quantity, KitchenArea kitchenArea)
+        public OrderResponse(string itemName, int quantity, KitchenArea kitchenArea)
         {
             ItemName = itemName;
-            KitchenArea = kitchenArea;
             Quantity = quantity;
+            KitchenArea = kitchenArea;
         }
     }
 }

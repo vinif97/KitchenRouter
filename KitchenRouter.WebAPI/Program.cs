@@ -2,11 +2,19 @@ using KitchenRouter.Domain.Models;
 using KitchenRouter.Domain.Repositories.Interfaces;
 using KitchenRouter.Infrastructure.Context;
 using KitchenRouter.Infrastructure.Repositories;
+using KitchenRouter.WebAPI.Middlewares;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options => 
+    {
+        // I want enum to be sent and received as string, not int
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()); 
+    });
 builder.Services.AddDbContext<KitchenRouterContext>(
     opt => opt.UseInMemoryDatabase("KitchenRouter"));
 builder.Services.AddScoped<IRepository<Order>, Repository<Order>>();
@@ -24,6 +32,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware(typeof(ExcpetionHandlerMiddleware));
 
 app.MapControllers();
 
