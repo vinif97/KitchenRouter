@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.9'
 
 services:
   rabbitmq:
@@ -10,10 +10,29 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:15672"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - mensageria
+
   kitchenrouter.webapi:
     image: ${DOCKER_REGISTRY-}kitchenrouterwebapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "80"
+      - "443"
     build:
       context: .
       dockerfile: KitchenRouter.WebAPI/Dockerfile
     depends_on:
       - rabbitmq
+
+networks:
+  mensageria:
+    driver: bridge    
+  

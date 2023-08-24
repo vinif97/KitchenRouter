@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenRouter.Domain", "Kit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenRouter.Infrastructure", "KitchenRouter.Infrastructure\KitchenRouter.Infrastructure.csproj", "{DF3A0F88-FC8E-4F1B-8642-CFBE23B36172}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenRouter.Application", "KitchenRouter.Application\KitchenRouter.Application.csproj", "{6908BD1C-0074-410A-B6F1-91AAF78C18FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenRouter.Application", "KitchenRouter.Application\KitchenRouter.Application.csproj", "{6908BD1C-0074-410A-B6F1-91AAF78C18FB}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{17DE4760-BE1C-47B3-9730-D8C40DBF2D8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1CC3214D-71E3-4B00-B58A-CFE895DF2A82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -5,14 +5,14 @@ namespace KitchenRouter.Application.DTOs
 {
     public record OrderResponse
     {
-        public string ItemName { get; init; }
+        public string OrderDescription { get; init; }
         public int Quantity { get; init; }
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public KitchenArea KitchenArea { get; init; }
 
-        public OrderResponse(string itemName, int quantity, KitchenArea kitchenArea)
+        public OrderResponse(string orderDescription, int quantity, KitchenArea kitchenArea)
         {
-            ItemName = itemName;
+            OrderDescription = orderDescription;
             Quantity = quantity;
             KitchenArea = kitchenArea;
         }

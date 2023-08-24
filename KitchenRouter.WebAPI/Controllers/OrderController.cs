@@ -1,8 +1,12 @@
 using KitchenRouter.Application.DTOs;
+using App = KitchenRouter.Application.Result;
+using KitchenRouter.Application.Services;
+using KitchenRouter.Application.Services.Interfaces;
 using KitchenRouter.Domain.Models;
 using KitchenRouter.Domain.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
+using KitchenRouter.Application.Result;
 
 namespace KitchenRouter.WebAPI.Controllers
 {
@@ -10,33 +14,38 @@ namespace KitchenRouter.WebAPI.Controllers
     [Route("[controller]")]
     public class OrderController : ControllerBase
     {
-        private readonly IRepository<Order> _repository;
-        public OrderController(IRepository<Order> repository)
+        private readonly IOrderService _orderService;
+        public OrderController(IOrderService orderService)
         {
-            _repository = repository;
+            _orderService = orderService;
         }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] OrderRequest orderRequest) 
         {
-            Order order = new(orderRequest.ItemName, orderRequest.Quantity, orderRequest.KitchenArea);
-            _repository.Create(order);
-            return Ok();
-        }
+            App.IResult result = await _orderService.CreateKitchenOrder(orderRequest);
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            var orders = _repository.GetAll();
-            
-            List<OrderResponse> orderResponses = new();
-
-            foreach (var order in orders)
+            return result switch
             {
-                orderResponses.Add(new OrderResponse(order.ItemName,
-                    order.Quantity, order.KitchenArea));
-            }
-            return Ok(orderResponses);
+                SuccessResult => Ok(),
+                ErrorResult errorResult => BadRequest(errorResult.Errors),
+                _ => throw new Exception("Unhandled type")
+            };
         }
+
+        //[HttpGet]
+        //public async Task<IActionResult> GetAll()
+        //{
+        //    var orders = _orderService.GetAll();
+            
+        //    List<OrderResponse> orderResponses = new();
+
+        //    foreach (var order in orders)
+        //    {
+        //        orderResponses.Add(new OrderResponse(order.ItemName,
+        //            order.Quantity, order.KitchenArea));
+        //    }
+        //    return Ok(orderResponses);
+        //}
     }
 }

@@ -18,6 +18,7 @@ namespace KitchenRouter.Infrastructure.Context
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new BaseEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
         }
 
         public override int SaveChanges()
