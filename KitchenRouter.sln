@@ -13,11 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenRouter.Application",
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{17DE4760-BE1C-47B3-9730-D8C40DBF2D8E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1CC3214D-71E3-4B00-B58A-CFE895DF2A82}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DFDCA9DD-D039-4D04-924B-6989137BE668}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenRouter.UnitTests", "..\KitchenRouter.UnitTests\KitchenRouter.UnitTests.csproj", "{21446E7C-3FAA-483C-9ACC-2FD78BCE199D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenRouter.UnitTests", "KitchenRouter.UnitTests\KitchenRouter.UnitTests.csproj", "{5DAEAD18-C5AD-4299-AB22-B1CE3715A0B6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenRouter.IntegrationTests", "..\KitchenRouter.IntegrationTests\KitchenRouter.IntegrationTests.csproj", "{D96F7BD4-088A-4AF7-A38E-06D74FC0BAEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenRouter.IntegrationTests", "KitchenRouter.IntegrationTests\KitchenRouter.IntegrationTests.csproj", "{4B40C2D2-A29D-4F9B-9133-E9C256E9D9D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,21 +45,21 @@ Global
 		{17DE4760-BE1C-47B3-9730-D8C40DBF2D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17DE4760-BE1C-47B3-9730-D8C40DBF2D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17DE4760-BE1C-47B3-9730-D8C40DBF2D8E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21446E7C-3FAA-483C-9ACC-2FD78BCE199D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21446E7C-3FAA-483C-9ACC-2FD78BCE199D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21446E7C-3FAA-483C-9ACC-2FD78BCE199D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21446E7C-3FAA-483C-9ACC-2FD78BCE199D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D96F7BD4-088A-4AF7-A38E-06D74FC0BAEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D96F7BD4-088A-4AF7-A38E-06D74FC0BAEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D96F7BD4-088A-4AF7-A38E-06D74FC0BAEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D96F7BD4-088A-4AF7-A38E-06D74FC0BAEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DAEAD18-C5AD-4299-AB22-B1CE3715A0B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DAEAD18-C5AD-4299-AB22-B1CE3715A0B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DAEAD18-C5AD-4299-AB22-B1CE3715A0B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DAEAD18-C5AD-4299-AB22-B1CE3715A0B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B40C2D2-A29D-4F9B-9133-E9C256E9D9D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B40C2D2-A29D-4F9B-9133-E9C256E9D9D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B40C2D2-A29D-4F9B-9133-E9C256E9D9D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B40C2D2-A29D-4F9B-9133-E9C256E9D9D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{21446E7C-3FAA-483C-9ACC-2FD78BCE199D} = {1CC3214D-71E3-4B00-B58A-CFE895DF2A82}
-		{D96F7BD4-088A-4AF7-A38E-06D74FC0BAEE} = {1CC3214D-71E3-4B00-B58A-CFE895DF2A82}
+		{5DAEAD18-C5AD-4299-AB22-B1CE3715A0B6} = {DFDCA9DD-D039-4D04-924B-6989137BE668}
+		{4B40C2D2-A29D-4F9B-9133-E9C256E9D9D9} = {DFDCA9DD-D039-4D04-924B-6989137BE668}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40A14D9C-BDC3-48DE-8176-19D225E14418}
