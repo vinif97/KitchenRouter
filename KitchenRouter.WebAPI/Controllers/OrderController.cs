@@ -21,7 +21,7 @@ namespace KitchenRouter.WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] OrderRequest orderRequest) 
+        public async Task<IActionResult> CreateOrder([FromBody] OrderRequest orderRequest) 
         {
             App.IResult result = await _orderService.CreateKitchenOrder(orderRequest);
 
@@ -33,19 +33,10 @@ namespace KitchenRouter.WebAPI.Controllers
             };
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> GetAll()
-        //{
-        //    var orders = _orderService.GetAll();
-            
-        //    List<OrderResponse> orderResponses = new();
-
-        //    foreach (var order in orders)
-        //    {
-        //        orderResponses.Add(new OrderResponse(order.ItemName,
-        //            order.Quantity, order.KitchenArea));
-        //    }
-        //    return Ok(orderResponses);
-        //}
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok();
+        }
     }
 }

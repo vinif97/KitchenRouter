@@ -30,9 +30,11 @@ namespace KitchenRouter.Application.Services
 
         public async Task<IResult> CreateKitchenOrder(OrderRequest orderRequest)
         {
+            // Map object and validate some bussiness rules, before persisting
             var order = _mapper.Map<Order>(orderRequest);
 
             ErrorResult errorResult;
+            // If any validation fail, send errors back
             if (order.Invalid)
             {
                 List<Error> errorList = new();
@@ -48,8 +50,19 @@ namespace KitchenRouter.Application.Services
 
             await _orderRepository.Create(order);
 
-            var message = JsonConvertor.GetMessageAsByteArray(order);
-            _messageSender.SendMessage(message, order.KitchenArea.ToString().ToLower() + "queue");
+            var orderResponse = _mapper.Map<OrderResponse>(order);
+            var message = JsonConvertor.GetMessageAsByteArray(orderResponse);
+            try
+            {
+                _messageSender.SendMessage(message, order.KitchenArea.ToString().ToLower() + "queue");
+            }
+            // If for any reason the send fails, delete the new created order
+            // from database
+            catch (Exception)
+            {
+                await _orderRepository.Delete(order);
+                throw;
+            }
 
             return new SuccessResult();
         }

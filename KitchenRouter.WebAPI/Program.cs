@@ -44,3 +44,6 @@ app.UseMiddleware(typeof(ExcpetionHandlerMiddleware));
 app.MapControllers();
 
 app.Run();
+
+// Added for integration tests
+public partial class Program { }
